@@ -38,26 +38,32 @@
         <h1 class="mt-4 pb-4 border-bottom">送信完了</h1>
         <p>ありがとうございました。送信を受け付けました。</p>
         <p>3営業日以内をめどにご返信いたしますので、しばらくお待ちください。</p>
+        <% company=params["company"] %>
+        <% name=params["name"]%>
+        <% mail= params["mail"] %>
+        <% tel= params["tel"] %>
+        <% content=params["content"]%>
         <table class="table">
             <tr>
                 <th>会社名</th>
-                <th><%= params["company"] %> </th>
+                <th><%= company %> </th>
             </tr>
             <tr>
                 <th>氏名</th>
-                <th><%= params["name"] %> </th>
+                <th><%= name %> </th>
             </tr>
             <tr>
                 <th>メール</th>
-                <th> <%= params["mail"] %></th>
+                <th> <%= mail %></th>
             </tr>
             <tr>
                 <th>電話番号</th>
-                <th><%= params["tel"] %> </th>
+                <th><%= tel%> </th>
             </tr>
             <tr>
                 <th>内容</th>
-                <th><%= params["content"] %></th>
+                
+                <th><%= content.gsub(/\r\n|\r|\n/, "<br>") %></th>
             </tr>
         </table>
         <div class="text-center mb-4">
